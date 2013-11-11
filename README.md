@@ -6,31 +6,23 @@ I've changed the standard IP on which the Ghost dev environment runs to 0.0.0.0 
 
 # Running Docker-Ghost
 
-Git clone the repository: 
-
-<code>git clone git@github.com:livebytes/docker-ghost.git</code>
-
 Install Docker using the Docker documentation that you can find here: https://www.docker.io/gettingstarted/
-
-Pull the ubuntu Docker:
-
-<code>sudo docker pull ubuntu:12.10</code>
 
 Build the ghost-docker (execute command below in the folder you cloned the repository to):
 
-<code>sudo docker build -t ghost .</code>
+```sudo docker build -t ghost github.com/brishin/docker-ghost```
 
 Run the ghost-docker:
 
-<code>sudo docker run -d ghost</code>
+```sudo docker run -d ghost```
 
 Find which port your instance is exposed to:
 
-<code>sudo docker port container-id 2368</code>
+```sudo docker port container-id 2368```
 
 Point your webbrowser to:
 
-<code>http://serverip:port</code>
+```http://serverip:port```
 
 # Adding your user to Ghost
 Follow the manual provided by Ghost, for further installation: http://docs.ghost.org/
