@@ -10,19 +10,15 @@ Install Docker using the Docker documentation that you can find here: https://ww
 
 Build the ghost-docker (execute command below in the folder you cloned the repository to):
 
-```sudo docker build -t ghost github.com/brishin/docker-ghost```
+    sudo docker build -t ghost github.com/brishin/docker-ghost
 
 Run the ghost-docker:
 
-```sudo docker run -d ghost```
+    sudo docker run -d ghost
 
-Find which port your instance is exposed to:
+Allow container to run publicly.
 
-```sudo docker port container-id 2368```
-
-Point your webbrowser to:
-
-```http://serverip:port```
+    sudo docker run -p 80:2368 ghost
 
 # Adding your user to Ghost
 Follow the manual provided by Ghost, for further installation: http://docs.ghost.org/
