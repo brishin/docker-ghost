@@ -1,8 +1,5 @@
 # Docker-Ghost
-This repository is made to run Ghost in Docker, the Dockerfile installs Node.js and NPM, adds Ghost to the image and runs Ghost in a development environment.
-
-# IP configuration
-I've changed the standard IP on which the Ghost dev environment runs to 0.0.0.0 to make it bind with any IP, the normal setting is 127.0.0.1, you can change this in the config.example.js added in this repository.
+This repository is made to run Ghost in Docker, the Dockerfile installs Node.js and NPM, adds Ghost to the image and runs Ghost.
 
 # Running Docker-Ghost
 
@@ -10,15 +7,15 @@ Install Docker using the Docker documentation that you can find here: https://ww
 
 Build the ghost-docker (execute command below in the folder you cloned the repository to):
 
-    sudo docker build -t ghost github.com/brishin/docker-ghost
+    sudo docker build -t brishin/ghost github.com/brishin/docker-ghost
 
-Run the ghost-docker:
+Allow docker to run publicly.
+Warning: changes here will not be saved due to docker's data model.
 
-    sudo docker run -d ghost
+    sudo docker run -d -p 80:2368 -e GHOST_URL=http://my-ghost-blog.com brishin/ghost
 
-Allow container to run publicly.
-
-    sudo docker run -p 80:2368 ghost
+# Config
+* ```GHOST_URL``` - URL where ghost is available publically.
 
 # Adding your user to Ghost
 Follow the manual provided by Ghost, for further installation: http://docs.ghost.org/
